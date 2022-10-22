@@ -1,6 +1,6 @@
 {
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "react-native-transcript-karaoke",
   "description": "Karaoke-style transcript manipulation for react native",
   "main": "./dist/TranscriptKaraoke.js",
