@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "lib": ["es2019"],
+    "jsx": "react-native",
+    "module": "esnext",
+    "rootDir": "src",
+    "outDir": "dist",
+    "types": ["react-native"],
+    "moduleResolution": "node",
+    "allowJs": true,
+    "declaration": true,
+    "emitDeclarationOnly": false,
+    "noEmit": false,
+    "isolatedModules": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "skipDefaultLibCheck": false,
+    "skipLibCheck": false
+  },
+  "exclude": [
+    "./example",
+    "./dist"
+  ]
+}

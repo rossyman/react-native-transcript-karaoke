@@ -1,0 +1,40 @@
+{
+  "license": "MIT",
+  "version": "1.0.0",
+  "name": "react-native-transcript-karaoke",
+  "description": "Karaoke-style transcript manipulation for react native",
+  "main": "./dist/TranscriptKaraoke.js",
+  "types": "./dist/TranscriptKaraoke.d.ts",
+  "keywords": [
+    "react",
+    "react-native",
+    "react-native-transcript-karaoke",
+    "transcript",
+    "karaoke",
+    "ios",
+    "android"
+  ],
+  "author": "Ross MacPhee (https://ross.software)",
+  "repository": "https://github.com/rossyman/react-native-transcript-karaoke",
+  "homepage": "https://github.com/rossyman/react-native-transcript-karaoke",
+  "bugs": "https://github.com/rossyman/react-native-transcript-karaoke/issues",
+  "scripts": {
+    "build": "npx tsc",
+    "lint": "npx eslint ./src"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "devDependencies": {
+    "@types/react-native": "^0.70.6",
+    "@typescript-eslint/eslint-plugin": "^5.40.1",
+    "eslint": "^8.26.0",
+    "eslint-config-standard-with-typescript": "^23.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.3.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.31.10",
+    "typescript": "^4.8.4"
+  }
+}
