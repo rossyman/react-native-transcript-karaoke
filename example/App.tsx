@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'
 
 import TranscriptKaraoke from 'react-native-transcript-karaoke'
-import { View } from 'react-native';
+import { View } from 'react-native'
 
 export default function App() {
 
-  const [progress, setProgress] = useState(0);
+  const [progress, setProgress] = useState(0)
 
   const transcript = `
     [00:00:03] Tell me something I need to know
@@ -34,5 +34,5 @@ export default function App() {
         activeStyle={{color: 'red'}}
       />
     </View>
-  );
+  )
 }
