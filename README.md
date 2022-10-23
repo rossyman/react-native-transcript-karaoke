@@ -27,6 +27,17 @@ You can also optionally supply your own regular expressions to determine what de
 If you wish to add interactivity to your Karaoke (Similar to Spotify), then you can use the `onSeekTo` prop which exposes `onPress` events from individual chunks.
 
 ```tsx
+const transcript = `
+  [00:00:03] Tell me something I need to know
+  [00:00:07] Then take my breath and never let it go
+  [00:00:12] If you just let me invade your space
+  [00:00:17] I'll take the pleasure, take it with the pain
+  [00:00:22] And if in the moment, I bite my lip
+  [00:00:27] Baby, in that moment, you'll know this is
+  [00:00:32] Something bigger than us and beyond bliss
+  [00:00:37] Give me a reason to believe it
+`
+
 <Karaoke
   transcript={transcript}
   progress={progress}
