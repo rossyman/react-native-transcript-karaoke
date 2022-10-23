@@ -1,5 +1,6 @@
 import { StyleProp, TextStyle } from 'react-native'
 
+import { Parser } from './parser'
 import { ProgressType } from './progress-type'
 
 export interface KaraokeProps {
@@ -25,15 +26,13 @@ export interface KaraokeProps {
    */
   activeStyle?: StyleProp<TextStyle>
   /**
-   * A regular expression pattern to match chunks within a given transcript
+   * The parser we wish to use to parse the transcript
    */
-  newChunkRegex?: RegExp
-  /**
-   * A regular expression pattern to match timestamps within given transcript chunks
-   */
-  timestampRegex?: RegExp
+  parser?: Parser
   /**
    * Exposes `onPress` events from chunks
+   *
+   * @param seekTo The duration the user has indicated they want to seek to
    */
   onSeekTo?: (seekTo: number) => void
 }

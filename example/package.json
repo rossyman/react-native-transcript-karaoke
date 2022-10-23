@@ -16,7 +16,7 @@
     "react": "18.0.0",
     "react-dom": "18.0.0",
     "react-native": "0.69.6",
-    "react-native-transcript-karaoke": "^2.0.0",
+    "react-native-transcript-karaoke": "^3.0.0",
     "react-native-web": "~0.18.7"
   },
   "devDependencies": {

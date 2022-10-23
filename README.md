@@ -18,13 +18,13 @@ As the passed in `progress` advances, the component will progressively re-style 
 
 The `progress` property can either represent `seconds` or `milliseconds`. All you need to do is tell the component which of the two (via `progressType`) you wish to use and let it handle the rest.
 
-You can also optionally supply your own regular expressions to determine what defines a "chunk" and what defines a "timestamp" within your domain.
-
-**By default**, a "chunk" is defined per new-line, a timestamp is in the format of `[HH:mm:ss]` and we expect the current progress to be specified in `seconds`.
-
-> 🚨 Please note that at this point in time, we do not support custom timestamp identifiers beyond `HH:mm:ss`; the customizable regular expression is purely for finding this timestamp inside of a chunk.
-
 If you wish to add interactivity to your Karaoke (Similar to Spotify), then you can use the `onSeekTo` prop which exposes `onPress` events from individual chunks.
+
+**By default**, a "chunk" is defined per new-line, a timestamp is in the format of `[HH:mm:ss]` or `[HH:mm:ss.SSS]` and we expect the current progress to be specified in `seconds`.
+
+> 🚨 Please note that at this point in time, we do not support custom timestamp identifiers beyond `HH:mm:ss` or `HH:mm:ss.SSS` out-of-the-box.
+> You can implement your own transcript parser by extending the abstract `Parser` class and providing your own implementation via the `parser` prop to give yourself more flexability.
+> The abstract `Parser` class has a few utility functions to make your life easier if you do decide to do this.
 
 ```tsx
 const transcript = `
@@ -74,15 +74,13 @@ interface KaraokeProps {
    */
   activeStyle?: StyleProp<TextStyle>
   /**
-   * A regular expression pattern to match chunks within a given transcript
+   * The parser we wish to use to parse the transcript
    */
-  newChunkRegex?: RegExp
-  /**
-   * A regular expression pattern to match timestamps within given transcript chunks
-   */
-  timestampRegex?: RegExp
+  parser?: Parser
   /**
    * Exposes `onPress` events from chunks
+   *
+   * @param seekTo The duration the user has indicated they want to seek to
    */
   onSeekTo?: (seekTo: number) => void
 }

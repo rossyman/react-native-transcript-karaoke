@@ -1,6 +1,6 @@
 import type { KaraokeProps } from '../models/karaoke-props'
+import { SimpleParser } from '../parsers/simple-parser'
 import { Text } from 'react-native'
-import { asKaraokeMap } from '../utils/as-karaoke-map'
 
 /**
  * Creates an interactive karaoke-styled transcript component
@@ -13,17 +13,11 @@ export function Karaoke({
   progressType = 'seconds',
   style,
   activeStyle,
-  newChunkRegex = /\r?\n/,
-  timestampRegex = /\[([0-9]{2}:[0-9]{2}:[0-9]{2})\]/,
+  parser = new SimpleParser(progressType),
   onSeekTo
 }: KaraokeProps): React.ReactElement {
 
-  const karaokeMap: Map<number, string> = asKaraokeMap(
-    newChunkRegex,
-    timestampRegex,
-    progressType,
-    transcript
-  )
+  const parsedTranscript = parser.parse(transcript)
 
   const seekToTimestamp = (timestamp: number): void => {
     if (onSeekTo) {
@@ -33,13 +27,13 @@ export function Karaoke({
 
   return (
     <>
-      {[...karaokeMap].map(([timestamp, transcript]) => (
+      {parsedTranscript.map(chunk => (
         <Text
-          key={timestamp}
-          style={[style, timestamp <= progress && activeStyle]}
-          onPress={() => seekToTimestamp(timestamp)}
+          key={chunk.start}
+          style={[style, chunk.start <= progress && activeStyle]}
+          onPress={() => seekToTimestamp(chunk.start)}
         >
-          {transcript}
+          {chunk.transcript}
         </Text>
       ))}
     </>

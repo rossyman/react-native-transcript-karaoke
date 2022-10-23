@@ -1,6 +1,6 @@
 {
   "license": "MIT",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "name": "react-native-transcript-karaoke",
   "description": "Karaoke-style transcript manipulation for react native",
   "main": "./dist/index.js",
@@ -12,7 +12,9 @@
     "transcript",
     "karaoke",
     "ios",
-    "android"
+    "android",
+    "track-player",
+    "react-native-track-player"
   ],
   "author": "Ross MacPhee (https://ross.software)",
   "repository": "https://github.com/rossyman/react-native-transcript-karaoke",
