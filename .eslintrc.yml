@@ -17,6 +17,7 @@ rules:
   "@typescript-eslint/strict-boolean-expressions": "off"
   "@typescript-eslint/space-before-function-paren": "off"
   "space-before-function-paren": "off"
+  "padded-blocks": "off"
 ignorePatterns:
   - example/
   - dist/
