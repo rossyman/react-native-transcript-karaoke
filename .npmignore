@@ -1,6 +1,7 @@
 *
 
 !dist/**/*
+!.images/**/*
 !LICENSE
 !package.json
 !README.md
